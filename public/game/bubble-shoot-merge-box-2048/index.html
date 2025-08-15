@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <base href="/game/bubble-shoot-merge-box-2048/">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0">
+    <title>Bubble Shoot Merge Box 2048</title>
+    <meta name="robots" content="noindex">
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            border: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            font-family: Arial, sans-serif;
+            position: relative; /* For positioning splash screen */
+        }
+
+        #game-iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            display: block;
+        }
+
+        .gamePlayerHidden {
+            display: none !important;
+        }
+
+        /* Splash Screen Styles */
+        .gamePlayerSplashPreroll {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 10;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: rgba(0, 0, 0, 0.85);
+            color: white;
+        }
+
+        .gamePlayerSplashLogo {
+            max-width: 200px;
+            margin-bottom: 20px;
+        }
+
+        .gamePlayerSplashTitle {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .gamePlayerSplashDescription {
+            font-size: 16px;
+            margin-bottom: 30px;
+            max-width: 80%;
+            text-align: center;
+        }
+
+        .gamePlayerSplashButton {
+            padding: 12px 24px;
+            font-size: 18px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .gamePlayerSplashButton:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <!-- Game Iframe -->
+    <iframe id="game-iframe" src="https://html5.gamemonetize.co/itojgi1jp1w75wsxdje8tv1ndlm8a0mb/" width="800" height="600" scrolling="no" frameborder="0" allowfullscreen></iframe>
+    
+    <!-- Splash Screen (Optional) -->
+    <div id="splash-screen" class="gamePlayerSplashPreroll">
+        <div class="gamePlayerSplashTitle">Bubble Shoot Merge Box 2048</div>
+        <div class="gamePlayerSplashDescription">A fast-paced puzzle shooter combining classic bubble shooting mechanics with addictive 2048 number merging gameplay.</div>
+        <button class="gamePlayerSplashButton" id="play-button">PLAY NOW</button>
+    </div>
+
+    <script>
+        // Simple splash screen handler
+        document.getElementById('play-button').addEventListener('click', function() {
+            document.getElementById('splash-screen').classList.add('gamePlayerHidden');
+        });
+    </script>
+</body>
+</html>
