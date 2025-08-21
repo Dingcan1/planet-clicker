@@ -102,54 +102,97 @@ export function Rating() {
       />
 
       <div className="container mx-auto">
-        <div className="bg-[#fff2cb] rounded-lg p-6 mb-6">
-          <h2 className="text-3xl font-bold text-center">{content.rating.title}</h2>
-          {/* 添加重置按钮 */}
-          <div className="text-center mt-2">
+        {/* 星球主题的评分标题区域 */}
+        <div className="relative bg-gradient-to-r from-indigo-900 via-purple-900 to-pink-900 rounded-xl p-8 mb-8 overflow-hidden">
+          {/* 星空背景效果 */}
+          <div className="absolute inset-0 opacity-20">
+            <div className="absolute top-4 left-8 w-1 h-1 bg-white rounded-full animate-pulse"></div>
+            <div className="absolute top-12 right-12 w-1 h-1 bg-white rounded-full animate-pulse delay-300"></div>
+            <div className="absolute bottom-8 left-16 w-1 h-1 bg-white rounded-full animate-pulse delay-700"></div>
+            <div className="absolute bottom-4 right-8 w-1 h-1 bg-white rounded-full animate-pulse delay-500"></div>
+            <div className="absolute top-8 left-1/3 w-1 h-1 bg-white rounded-full animate-pulse delay-1000"></div>
+            <div className="absolute bottom-12 right-1/4 w-1 h-1 bg-white rounded-full animate-pulse delay-200"></div>
+          </div>
+          
+          <div className="relative z-10">
+            <h2 className="text-4xl font-bold text-center text-white mb-2 drop-shadow-lg">
+              🌟 {content.rating.title} 🌟
+            </h2>
+            <p className="text-center text-purple-200 text-lg">
+              Join thousands of cosmic explorers in rating this stellar adventure!
+            </p>
+          </div>
+          
+          {/* 开发环境重置按钮 */}
+          <div className="absolute top-2 right-2">
             <button
               onClick={handleReset}
-              className="text-sm text-gray-500 hover:text-gray-700"
+              className="text-xs text-purple-300 hover:text-white transition-colors"
               style={{ display: process.env.NODE_ENV === 'development' ? 'block' : 'none' }}
             >
               Reset
             </button>
           </div>
         </div>
-        <div className="flex flex-col items-center justify-center space-y-4">
-          <div className="flex items-center space-x-2">
-            {[1, 2, 3, 4, 5].map((star) => (
-              <button
-                key={star}
-                onClick={() => handleVote(star)}
-                disabled={hasVoted}
-                className={`w-12 h-12 flex items-center justify-center rounded-full transition-all ${
-                  (hasVoted && star <= userRating) || (!hasVoted && star <= userRating)
-                    ? 'bg-yellow-400 text-white'
-                    : hasVoted
-                    ? 'bg-gray-200 cursor-not-allowed'
-                    : 'bg-gray-200 hover:bg-yellow-200 cursor-pointer'
-                }`}
-                aria-label={`Rate ${star} stars`}
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 24 24"
-                  fill="currentColor"
-                  className="w-6 h-6"
+
+        {/* 评分区域 */}
+        <div className="bg-gradient-to-b from-slate-50 to-white rounded-xl p-8 shadow-2xl border border-purple-100">
+          <div className="flex flex-col items-center justify-center space-y-6">
+            {/* 星星评分 */}
+            <div className="flex items-center space-x-3">
+              {[1, 2, 3, 4, 5].map((star) => (
+                <button
+                  key={star}
+                  onClick={() => handleVote(star)}
+                  disabled={hasVoted}
+                  className={`w-16 h-16 flex items-center justify-center rounded-full transition-all duration-300 transform hover:scale-110 ${
+                    (hasVoted && star <= userRating) || (!hasVoted && star <= userRating)
+                      ? 'bg-gradient-to-r from-yellow-400 to-orange-500 text-white shadow-lg scale-105'
+                      : hasVoted
+                      ? 'bg-gray-200 cursor-not-allowed opacity-60'
+                      : 'bg-gradient-to-r from-gray-200 to-gray-300 hover:from-yellow-200 hover:to-yellow-300 cursor-pointer shadow-md'
+                  }`}
+                  aria-label={`Rate ${star} stars`}
                 >
-                  <path
-                    fillRule="evenodd"
-                    d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z"
-                    clipRule="evenodd"
-                  />
-                </svg>
-              </button>
-            ))}
-          </div>
-          <div className="text-center">
-            <div className="text-4xl font-bold text-yellow-500">{rating}</div>
-            <div className="text-gray-500">
-              <span className="font-semibold">{votes.toLocaleString()}</span> {content.rating.votes}
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    className="w-8 h-8"
+                  >
+                    <path
+                      fillRule="evenodd"
+                      d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z"
+                      clipRule="evenodd"
+                    />
+                  </svg>
+                </button>
+              ))}
+            </div>
+            
+            {/* 评分显示 */}
+            <div className="text-center space-y-2">
+              <div className="flex items-center justify-center space-x-2">
+                <span className="text-6xl font-bold bg-gradient-to-r from-yellow-500 to-orange-500 bg-clip-text text-transparent">
+                  {rating}
+                </span>
+                <div className="text-yellow-500">
+                  <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
+                    <path fillRule="evenodd" d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z" clipRule="evenodd" />
+                  </svg>
+                </div>
+              </div>
+              <div className="text-slate-600 text-lg">
+                <span className="font-bold text-2xl text-purple-700">{votes.toLocaleString()}</span>
+                <span className="ml-2 text-slate-500">cosmic explorers have rated this game</span>
+              </div>
+              {hasVoted && (
+                <div className="mt-4 p-3 bg-green-50 border border-green-200 rounded-lg">
+                  <p className="text-green-700 font-medium">
+                    🚀 Thank you for rating Planet Clicker! Your feedback helps other space explorers discover this cosmic adventure.
+                  </p>
+                </div>
+              )}
             </div>
           </div>
         </div>
