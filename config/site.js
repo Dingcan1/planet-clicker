@@ -3,14 +3,14 @@ export const siteConfig = {
   description: "Play Planet Clicker online for free. Click planets, generate energy, and expand your cosmic empire. No download required, start playing instantly in your browser!",
   domain: "freeplanetclicker.com",
   url: "https://freeplanetclicker.com",
-  email: "support@crazy-cattle.net",
+  email: "support@freeplanetclicker.com",
   author: "Planet Clicker",
   // Cloudflare R2 静态资源公共域名（可用自定义域名或 R2 public bucket 域名）
-  // 例如：https://cdn.crazy-cattle.net 或 https://pub-xxxxxxx.r2.dev
-  r2BaseUrl: "https://cdn.crazy-cattle.net",
+  // 例如：https://cdn.freeplanetclicker.com 或 https://pub-xxxxxxx.r2.dev
+  r2BaseUrl: "https://planetclickerbucket.dingcanhn.workers.dev",
   social: {
-    twitter: "CrazyCattle",
-    facebook: "CrazyCattle",
+    twitter: "PlanetClicker",
+    facebook: "PlanetClicker",
   },
   metadata: {
     keywords: ["planet clicker", "clicker game", "online game", "free game", "idle game"],
@@ -25,6 +25,6 @@ export const siteConfig = {
       apple: "/assets/img/apple-touch-icon.jpg", // 修改为.jpg格式
       // safari: "/assets/img/safari-pinned-tab.svg",
     },
-    og: "/assets/img/crazy-cattle-3d-og-image.png", // 修改为.jpg格式
+    og: "/assets/img/planet-clicker-og-image.png", // 修改为正确的图片路径
   },
 };
