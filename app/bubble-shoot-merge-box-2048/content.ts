@@ -29,7 +29,7 @@ export const content = {
     game: {
       url: '/bubble-shoot-merge-box-2048.embed',
       title: "bubble-shoot-merge-box-2048",
-      externalUrl: '/game/bubble-shoot-merge-box-2048/index.html'
+      externalUrl: `${siteConfig.r2BaseUrl}/game/bubble-shoot-merge-box-2048/index.html`
     }
   },
   otherGames: {

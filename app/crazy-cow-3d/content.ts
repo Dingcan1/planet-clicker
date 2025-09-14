@@ -11,7 +11,7 @@ export const crazyCowContent = {
     game: {
       url: '/crazy-cow-3d.embed',
       title: "crazycow3d",
-      externalUrl: '/game/crazycow3d/index.html'
+      externalUrl: `${siteConfig.r2BaseUrl}/game/crazycow3d/index.html`
     }
   },
 

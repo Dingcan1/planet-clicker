@@ -10,6 +10,7 @@ export interface SiteConfig {
   url: string;
   email: string;
   author: string;
+  r2BaseUrl: string;
   social: {
     twitter: string;
     facebook: string;

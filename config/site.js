@@ -5,6 +5,9 @@ export const siteConfig = {
   url: "https://crazy-cattle.net",
   email: "support@crazy-cattle.net",
   author: "Planet Clicker",
+  // Cloudflare R2 静态资源公共域名（可用自定义域名或 R2 public bucket 域名）
+  // 例如：https://cdn.crazy-cattle.net 或 https://pub-xxxxxxx.r2.dev
+  r2BaseUrl: "https://cdn.crazy-cattle.net",
   social: {
     twitter: "CrazyCattle",
     facebook: "CrazyCattle",

@@ -1,4 +1,5 @@
 import { content as globalContent } from "@/config/content";
+import { siteConfig } from "@/config/site";
 
 export const pokemonGammaEmeraldContent = {
   ...globalContent,
@@ -9,7 +10,7 @@ export const pokemonGammaEmeraldContent = {
     game: {
       url: '/pokemon-gamma-emerald.embed',
       title: "Pokemon Gamma Emerald",
-      externalUrl: '/game/pokemon-gamma-emerald/index.html'
+      externalUrl: `${siteConfig.r2BaseUrl}/game/pokemon-gamma-emerald/index.html`
     }
   },
 

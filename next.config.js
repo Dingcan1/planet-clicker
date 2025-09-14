@@ -8,47 +8,47 @@ const nextConfig = {
     return [
       {
         source: '/planet-clicker.embed',
-        destination: '/game/planet-clicker/index.html',
+        destination: 'https://www.planetclickerbucket.dingcanhn.workers.dev/game/planet-clicker/index.html',
       },
       {
         source: '/bubble-shoot-merge-box-2048.embed',
-        destination: '/game/bubble-shoot-merge-box-2048/index.html',
+        destination: 'https://www.planetclickerbucket.dingcanhn.workers.dev/game/bubble-shoot-merge-box-2048/index.html',
       },
       {
         source: '/crazy-cattle-3d.embed',
-        destination: '/game/crazycattle3d/index.html',
+        destination: 'https://www.planetclickerbucket.dingcanhn.workers.dev/game/crazycattle3d/index.html',
       },
       {
         source: '/crazy-cow-3d.embed',
-        destination: '/game/crazycow3d/index.html',
+        destination: 'https://www.planetclickerbucket.dingcanhn.workers.dev/game/crazycow3d/index.html',
       },
       {
         source: '/cheese-chompers-3d.embed',
-        destination: '/game/cheesechompers3d/index.html',
+        destination: 'https://www.planetclickerbucket.dingcanhn.workers.dev/game/cheesechompers3d/index.html',
       },
       {
         source: '/brainrot-clicker.embed',
-        destination: '/game/brainrot-clicker/index.html',
+        destination: 'https://www.planetclickerbucket.dingcanhn.workers.dev/game/brainrot-clicker/index.html',
       },
       {
         source: '/basketball-bros-unblocked.embed',
-        destination: '/game/basketball-bros-unblocked/index.html',
+        destination: 'https://www.planetclickerbucket.dingcanhn.workers.dev/game/basketball-bros-unblocked/index.html',
       },
       {
         source: '/pokemon-gamma-emerald.embed',
-        destination: '/game/pokemon-gamma-emerald/index.html',
+        destination: 'https://www.planetclickerbucket.dingcanhn.workers.dev/game/pokemon-gamma-emerald/index.html',
       },
       {
         source: '/crazy-chicken-3d.embed',
-        destination: '/game/crazy-chicken-3d/index.html',
+        destination: 'https://www.planetclickerbucket.dingcanhn.workers.dev/game/crazy-chicken-3d/index.html',
       },
       {
         source: '/sprunki-incredibox.embed',
-        destination: '/game/sprunki-incredibox/index.html',
+        destination: 'https://www.planetclickerbucket.dingcanhn.workers.dev/game/sprunki-incredibox/index.html',
       },
       {
         source: '/futbol-libre.embed',
-        destination: '/game/futbol-libre/index.html',
+        destination: 'https://www.planetclickerbucket.dingcanhn.workers.dev/game/futbol-libre/index.html',
       },
     ]
   }

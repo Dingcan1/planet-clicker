@@ -1,4 +1,5 @@
 import { content as globalContent } from "@/config/content";
+import { siteConfig } from "@/config/site";
 
 export const crazyChickenContent = {
   // 基础内容继承自全局配置
@@ -11,7 +12,7 @@ export const crazyChickenContent = {
     game: {
       url: '/crazy-chicken-3d.embed',
       title: "crazychicken3d",
-      externalUrl: '/game/crazy-chicken-3d/index.html'
+      externalUrl: `${siteConfig.r2BaseUrl}/game/crazy-chicken-3d/index.html`
     }
   },
 

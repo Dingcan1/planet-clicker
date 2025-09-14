@@ -1,0 +1,7 @@
+name = "planet-clicker-cdn"
+main = "worker.js"
+compatibility_date = "2023-05-18"
+
+[[r2_buckets]]
+binding = "PLANET_CLICKER_BUCKET"
+bucket_name = "planetclicker"
