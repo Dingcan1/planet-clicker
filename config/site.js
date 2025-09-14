@@ -1,8 +1,8 @@
 export const siteConfig = {
   name: "Planet Clicker", // 已更改网站名称
   description: "Play Planet Clicker online for free. Click planets, generate energy, and expand your cosmic empire. No download required, start playing instantly in your browser!",
-  domain: "crazy-cattle.net",
-  url: "https://crazy-cattle.net",
+  domain: "freeplanetclicker.com",
+  url: "https://freeplanetclicker.com",
   email: "support@crazy-cattle.net",
   author: "Planet Clicker",
   // Cloudflare R2 静态资源公共域名（可用自定义域名或 R2 public bucket 域名）
