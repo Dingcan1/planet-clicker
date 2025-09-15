@@ -27,8 +27,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Crazy Cattle 3D - Free Online Game',
-    description: 'Play free online game without download at Crazy Cattle 3D',
+    title: `${siteConfig.name} - Free Online Game`,
+    description: `Play free online game without download at ${siteConfig.name}`,
     images: [siteConfig.images.og],  // 添加 Twitter 卡片图片
   },
   robots: {

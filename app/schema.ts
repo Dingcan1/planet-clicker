@@ -46,7 +46,7 @@ export const howToPlaySchema = {
   "@context": "http://schema.org",
   "@type": "HowTo",
   "name": content.howToPlay.title,
-  "url": "https://crazy-cattle.net",
+  "url": siteConfig.url,
   "inLanguage": "en",
   "image": {
     "@type": "ImageObject",
