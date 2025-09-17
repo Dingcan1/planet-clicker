@@ -61,19 +61,19 @@ export default function RootLayout({
         {/* <link rel="mask-icon" href={siteConfig.images.icon.safari} color="#5bbad5" /> */}
         <link rel="shortcut icon" href={siteConfig.images.icon.favicon} />
         <meta name="theme-color" content={siteConfig.metadata.themeColor} />
-        {/* Google Analytics - 只在有GA ID时加载 */}
+        {/* Google Analytics - 使用官方片段 */}
         {gaId && (
           <>
             <Script
+              async
               src={`https://www.googletagmanager.com/gtag/js?id=${gaId}`}
               strategy="afterInteractive"
             />
             <Script id="google-analytics" strategy="afterInteractive">
-              {`.
+              {`
                 window.dataLayer = window.dataLayer || [];
-                function gtag(){dataLayer.push(arguments);}
+                function gtag(){dataLayer.push(arguments);} 
                 gtag('js', new Date());
-
                 gtag('config', '${gaId}');
               `}
             </Script>
