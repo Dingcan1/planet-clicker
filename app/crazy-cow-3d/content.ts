@@ -1,4 +1,5 @@
 import { content as globalContent } from "@/config/content";
+import { siteConfig } from "@/config/site";
 
 export const crazyCowContent = {
   // 基础内容继承自全局配置
