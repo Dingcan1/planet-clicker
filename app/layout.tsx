@@ -61,7 +61,12 @@ export default function RootLayout({
         {/* <link rel="mask-icon" href={siteConfig.images.icon.safari} color="#5bbad5" /> */}
         <link rel="shortcut icon" href={siteConfig.images.icon.favicon} />
         <meta name="theme-color" content={siteConfig.metadata.themeColor} />
-        {/* Google Analytics - 使用官方片段 */}
+      </head>
+      <body className={`${inter.className} dark`}>
+        <ThemeProvider>
+          {children}
+        </ThemeProvider>
+        {/* Google Analytics - 移到body里确保客户端执行 */}
         {gaId && (
           <>
             <Script
@@ -85,11 +90,6 @@ export default function RootLayout({
             </Script>
           </>
         )}
-      </head>
-      <body className={`${inter.className} dark`}>
-        <ThemeProvider>
-          {children}
-        </ThemeProvider>
       </body>
     </html>
   );
