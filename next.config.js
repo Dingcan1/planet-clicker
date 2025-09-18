@@ -6,6 +6,20 @@ const nextConfig = {
   images: { unoptimized: true },
   async rewrites() {
     return [
+      // 静态资源走 R2 Worker（本地 public/assets 已被 .vercelignore 忽略）
+      {
+        source: '/assets/:path*',
+        destination: 'https://planetclickerbucket.dingcanhn.workers.dev/public/assets/:path*',
+      },
+      // 常见根级别图标/清单的兼容（浏览器会直接请求根路径）
+      {
+        source: '/favicon.ico',
+        destination: 'https://planetclickerbucket.dingcanhn.workers.dev/public/assets/img/favicon.ico',
+      },
+      {
+        source: '/site.webmanifest',
+        destination: 'https://planetclickerbucket.dingcanhn.workers.dev/public/assets/img/site.webmanifest',
+      },
       {
         source: '/planet-clicker.embed',
         destination: 'https://planetclickerbucket.dingcanhn.workers.dev/game/planet-clicker/index.html',
