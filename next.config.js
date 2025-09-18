@@ -11,6 +11,11 @@ const nextConfig = {
         source: '/assets/:path*',
         destination: 'https://planetclickerbucket.dingcanhn.workers.dev/public/assets/:path*',
       },
+      // 兼容直接请求 /public/** 的路径
+      {
+        source: '/public/:path*',
+        destination: 'https://planetclickerbucket.dingcanhn.workers.dev/public/:path*',
+      },
       // 常见根级别图标/清单的兼容（浏览器会直接请求根路径）
       {
         source: '/favicon.ico',
