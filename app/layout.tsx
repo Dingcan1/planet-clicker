@@ -61,20 +61,15 @@ export default function RootLayout({
         {/* <link rel="mask-icon" href={siteConfig.images.icon.safari} color="#5bbad5" /> */}
         <link rel="shortcut icon" href={siteConfig.images.icon.favicon} />
         <meta name="theme-color" content={siteConfig.metadata.themeColor} />
-      </head>
-      <body className={`${inter.className} dark`}>
-        <ThemeProvider>
-          {children}
-        </ThemeProvider>
-        {/* Google Analytics - 移到body里确保客户端执行 */}
+        {/* Google Analytics - 放到 head 并在交互前加载，避免因客户端错误而未执行 */}
         {gaId && (
           <>
             <Script
               id="google-analytics-src"
               src={`https://www.googletagmanager.com/gtag/js?id=${gaId}`}
-              strategy="afterInteractive"
+              strategy="beforeInteractive"
             />
-            <Script id="google-analytics" strategy="afterInteractive">
+            <Script id="google-analytics" strategy="beforeInteractive">
               {`
                 console.log('GA inline executed', '${gaId}');
                 window.dataLayer = window.dataLayer || [];
@@ -83,15 +78,20 @@ export default function RootLayout({
                 gtag('config', '${gaId}');
               `}
             </Script>
-            <Script id="ms-clarity" strategy="afterInteractive">
+          </>
+        )}
+      </head>
+      <body className={`${inter.className} dark`}>
+        <ThemeProvider>
+          {children}
+        </ThemeProvider>
+        <Script id="ms-clarity" strategy="afterInteractive">
               {`(function(c,l,a,r,i,t,y){
                   c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
                   t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
                   y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
                 })(window, document, "clarity", "script", "t51t2dqzmb");`}
-            </Script>
-          </>
-        )}
+        </Script>
       </body>
     </html>
   );
