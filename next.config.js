@@ -26,6 +26,14 @@ const nextConfig = {
         destination: 'https://planetclickerbucket.dingcanhn.workers.dev/public/assets/img/site.webmanifest',
       },
       {
+        source: '/sitemap.xml',
+        destination: 'https://planetclickerbucket.dingcanhn.workers.dev/public/sitemap.xml',
+      },
+      {
+        source: '/robots.txt',
+        destination: 'https://planetclickerbucket.dingcanhn.workers.dev/public/robots.txt',
+      },
+      {
         source: '/planet-clicker.embed',
         destination: 'https://planetclickerbucket.dingcanhn.workers.dev/game/planet-clicker/index.html',
       },
